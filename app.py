@@ -12,4 +12,4 @@ app = Flask(__name__)
 @app.route('/')
 
 def happy_new_year():
-    return 'Happy new year!'
+    return 'Happy new year! By @Mawconol'
