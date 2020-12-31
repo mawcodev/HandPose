@@ -68,3 +68,17 @@ Ejecutamos:
 ```
 python -m flask run
 ```
+
+## Activamos el modo debug
+
+Para activar el modo debug en flask debemos ejecutar, en este caso Windows, los siguientes comandos:
+
+```
+set FLASK_ENV=development
+set FLASK_DEBUG=1
+```
+Si queremos volver al modo de producción cambiamos los anteriores parametros por `production` y `0`, respectivamente.
+
+Espero que les haya servido de ayuda!
+
+Ahora vamos a añadir el modelo de HandPose.
