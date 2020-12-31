@@ -20,3 +20,40 @@ Para trabajar en esta ventana virtual la activamos, en mi caso desde Windows con
 ```
 env\Scripts\activate.bat
 ```
+Ahora vamos a instalar el framework, en este caso se utiliza Flask.
+
+### 3. Instalación de Flask
+
+Lo instalamos dentro del entorno de trabajo, observaremos que está activo si delante de la ruta tenemos `(env)`.
+Seguidamente instalamos el framework.
+
+```
+pip3 install Flask
+```
+
+Sí quereís comprobar si se ha instalado correctamente podeís ver las distintas dependencias que teneís instaladas con:
+
+```
+pip3 freeze
+```
+## Creando la aplicación
+
+Creación de un fichero llamado `app.py`
+
+Añadiremos un código de prueba. Donde, llamaremos a la clase de Flask e instanciamos para que Flask sepa donde encontrar los ficheros estáticos de nuestra aplicación.
+
+```
+from flask import Flask
+app = Flask(__name__)
+```
+Creamos `route`, encargado de decir a Flask qué URL debe ejecutar.
+
+```
+@app.route('/')
+```
+Por último, creamos una función de prueba:
+
+```
+def new_year():
+    return 'Happy New Year!'
+```
