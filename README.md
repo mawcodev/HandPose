@@ -57,3 +57,14 @@ Por último, creamos una función de prueba:
 def new_year():
     return 'Happy New Year!'
 ```
+### Ejecutamos la app
+
+Antes de ejecutar la aplicación debemos indicarle al servidor qué aplicación debe ejecutar declarando la variable de entorno `FLASK_APP`.
+
+En Windows, vamos al fichero `env\Scripts\activate.bat` y al final del fichero añadimos `set "FLASK_APP=app.py"`. Salimos del entorno con `env\Scripts\deactivate.bat` y volvemos a entrar en el entorno `env`.
+
+Ejecutamos:
+
+```
+python -m flask run
+```
