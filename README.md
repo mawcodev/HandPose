@@ -1,3 +1,5 @@
+<img src="./static/image/happiBaka.png">
+
 # HandPose
 Este proyecto reconoce la posición de las manos, es decir, los gestos que hace la mano, en este identificaremos solo 
 algunos de ellos.
