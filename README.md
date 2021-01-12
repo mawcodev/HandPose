@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://github.com/mawcoo/HandPose/blob/main/static/images/happiBaka.PNG" width="45%">
-  <h2>HandPose</h2>
+  <h1>HandPose</h1>
 </div>
 Este proyecto reconoce la posición de las manos, es decir, los gestos que hace la mano, en este identificaremos solo 
 algunos de ellos.
