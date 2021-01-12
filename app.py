@@ -1,15 +1,31 @@
 """
-Fichero: app.py
-Descripción: El corazón de la aplicación. Fichero que se lanza al querer iniciar la aplicación.
-Autor: Matthew Conde Oltra
+File: app.py
+Description: The heart of aplication. 
+Author: Matthew Conde Oltra
 """
-
-from flask import Flask
+from flask import Flask, render_template, Response
+import numpy as np
+from cam import VideoCamera
 
 app = Flask(__name__)
 
 @app.route('/')
+def index():
+	"""Video streaming home page."""
+	return render_template('test.html')
 
-def happy_new_year():
-    return 'Happy new year! By @Mawconol'
+def gen(camera):
+	"""Video streaming generator function"""
+	while True:
+		frame = camera.get_frame()
+		yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+		#yield(frame)
 
+@app.route('/video_feed')
+def video_feed():
+	"""Video streaming route. Put this in the src attribute of an img tag."""
+	return Response(gen(VideoCamera()), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=80, debug=True, threaded=True)

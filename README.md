@@ -1,24 +1,24 @@
 # HandPose
-This proyect is recognition hand pose with flask framework and python
+Este proyecto reconoce la posición de las manos, es decir, los gestos que hace la mano, en este identificaremos solo 
+algunos de ellos.
 
-## Instalación Flask
+## Modelos tensorflow
 
-### 1. Creación del virtualenv
-
-Una vez instalado Python, necesitamos crear una ventana de trabajo, instalamos virtualenv con pip o pip3, dependiendo de nuestra versión.
-Si estamos en Windows desde la CMD y dentro del repositorio que deseemos crear la ventana de trabajo escribimos:
+### 1. Instalación tensorflow
 
 ```
-python -m virtualenv env
+pip install tensorflow
 ```
-Esto crea el directorio `env`.
 
-### 2. Activación ventana de trabajo
+### 2. Carga de los modelos
 
-Para trabajar en esta ventana virtual la activamos, en mi caso desde Windows con CMD:
+Dentro del fichero .py que nosostros vayamos ha asignar para dicho cometido:
 
 ```
-env\Scripts\activate.bat
+import * as handpose from '@tensorflow-models/handpose';
+import * as tf from '@tensorflow/tfjs-core';
+import * as tfjsWasm from '@tensorflow/tfjs-backend-wasm';
+import '@tensorflow/tfjs-backend-webgl';
 ```
 Ahora vamos a instalar el framework, en este caso se utiliza Flask.
 
