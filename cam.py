@@ -9,7 +9,7 @@ Author: Matthew Conde Oltra
 import cv2
 import mediapipe as mp
 
-class VideoCamera(object):
+class VideoStream(object):
     
     #Initialize important variables
     def __init__(self):
@@ -25,7 +25,7 @@ class VideoCamera(object):
 
         self.video.release()        
 
-    def get_frame(self):
+    def hand_pose(self):
 
         # Read each frame 
         ret, frame = self.video.read()
@@ -46,6 +46,7 @@ class VideoCamera(object):
             self.mp_drawing.draw_landmarks(
                 image, hand_landmarks, self.mp_hands.HAND_CONNECTIONS)
 
+        # Convert to jpeg
         ret, jpeg = cv2.imencode('.jpg', image)
 
         return jpeg.tobytes()
